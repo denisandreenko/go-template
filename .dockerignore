@@ -1,0 +1,20 @@
+# Hidden
+.editorconfig
+.git
+
+# Docker
+deployments
+
+# Bare metal
+init
+
+# Build
+bin
+tars
+build
+
+# Tests
+test
+
+# MD files
+*.md

@@ -1,0 +1,10 @@
+# IntelliJ project files
+.idea
+*.iml
+
+# Build files
+bin
+out
+tars
+build
+

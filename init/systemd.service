@@ -1,0 +1,23 @@
+[Unit]
+Description={{ NAME }} micro service
+After=network.target
+
+[Service]
+Environment="LOG_LEVEL={{ LOG_LEVEL }}"
+Environment="LOG_FILE=/opt/{{ NAME }}/{{ VERSION }}/logs/{{ NAME }}.slt.log"
+Environment="CONFIG_PATH=/opt/{{ NAME }}/{{ VERSION }}/configs/{{ ENVIRONMENT }}.yml"
+Environment="ENV={{ ENVIRONMENT }}"
+Environment="VERSION={{ VERSION }}"
+Environment="ELASTIC_APM_SERVICE_NAME={{ NAME }}"
+Environment="ELASTIC_APM_SERVICE_VERSION={{ VERSION }}"
+Environment="ELASTIC_APM_ENVIRONMENT={{ ENVIRONMENT }}"
+Environment="ELASTIC_APM_SERVER_URL=http://10.15.2.4:8200"
+Environment="ELASTIC_APM_IGNORE_URLS=/check|/metrics|/grpc.health.*"
+User=booblikator
+ExecStart=/opt/{{ NAME }}/{{ VERSION }}/{{ NAME }}
+#ExecStart=/usr/bin/dlv --listen=:2345 --headless=true --api-version=2 exec /opt/{{ NAME }}/{{ VERSION }}/{{ NAME }}
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

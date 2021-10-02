@@ -1,0 +1,20 @@
+grpc:
+  port: 5462
+  check:
+    host: testservice
+http:
+  port: 5463
+  check:
+    host: testservice
+consul:
+  disabled: false
+  scheme: http
+  host: consul
+  port: 8500
+  dc: dc1
+  check:
+    interval: 10s
+apmserver:
+  name: elasticsearch-apm-server
+  tag: docker
+  dc: dc1

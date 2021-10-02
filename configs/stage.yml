@@ -1,0 +1,16 @@
+grpc:
+  port: 5462
+http:
+  port: 5463
+consul:
+  disabled: false
+  scheme: http
+  host: 127.0.0.1
+  port: 8500
+  dc: dc1
+  check:
+    interval: 10s
+apmserver:
+  name: elasticsearch-apm-server
+  tag: stage
+  dc: dc1
