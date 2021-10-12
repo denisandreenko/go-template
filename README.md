@@ -34,7 +34,7 @@ Create docker image and try to push it in docker registry with version and 'late
 make build_image
 ```
 
-## Metrict
+## Metrics
 ```
 Added possibility to see service metrics after running it in docker:
 
