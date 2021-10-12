@@ -5,7 +5,7 @@ GO_PACKAGE = github.com/denisandreenko/testservice
 THIS_FILE := $(lastword $(MAKEFILE_LIST))
 
 # Docker
-REGISTRY_URL ?= docker.io
+REGISTRY_URL ?= darus/hitman
 DOCKER_IMAGE_NAME ?= ${REGISTRY_URL}/${NAME}
 DOCKER_APP_FILENAME ?= deployments/docker/Dockerfile
 DOCKER_COMPOSE_FILE ?= deployments/docker-compose/docker-compose.yml
