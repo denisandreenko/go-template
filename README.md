@@ -1,45 +1,43 @@
 # Go service template
 
-Шаблон сервиса. При клонировании указать имя директории для клонирования, которая имеет название сервиса.
-После клонирования необходимо отредактировать файл Makefile.env и выполнить команду: make -f Makefile.env.
-После этого станут доступны описанные ниже директивы.
+Service template. When cloning, specify the name of the directory for cloning, which has the name of the service.
+After cloning, you need to edit the file Makefile.env and run: make -f Makefile.env.
+After that, the directives described below will become available.
 
-## Сборка
+## Build
 ```
-Локально: make build
+Local: make build
 Docker: make docker_build
 ```
-## Тесты
+## Tests
 ```
-Запуск Unit tests в docker
+Run Unit tests in docker
 make tests
 ```
-## Развертывание
+## Startup
 ```
-Поднять приложение и окружение в докере: make docker_env_up
-Погасить все: make docker_env_down
+Up docker environment: make docker_env_up
+Shutdown all: make docker_env_down
 ```
 ```
-Поднять только окружение в докере: make local_env_up
-Погасить все: make local_env_down
+Up docker environment: make local_env_up
+Shutdown all: make local_env_down
 ```
 
-## Дистрибутив
+## Distributive
 ```
-Создает архив с конфигами и приложением
+Create archieve with configs and app
 make tar
 ```
 ```
-Создает docker образ и пытается запушить его в docker registry
-с тегами версии и latest    
+Create docker image and try to push it in docker registry with version and 'latest' tags  
 make build_image
 ```
 
-## Метрики
+## Metrict
 ```
-Добавлена возможность просматривать метрики сервиса 
-после его старта в докере:
+Added possibility to see service metrics after running it in docker:
 
-Адресс - localhost:3000
-Login/Password - admin/P@ssw0rd (изменить можно в /deployments/docker/grafana/config.monitoring)
+Address - localhost:3000
+Login/Password - admin/P@ssw0rd (can change in /deployments/docker/grafana/config.monitoring)
 ```
